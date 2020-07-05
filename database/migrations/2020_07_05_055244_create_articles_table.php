@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('isi', 255);
             $table->string('slug', 45);
             $table->string('tag', 45);
+            $table->timestamps(0);
         });
     }
 

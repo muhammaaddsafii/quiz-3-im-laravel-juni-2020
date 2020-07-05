@@ -2,22 +2,21 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>@yield('title')</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="{{asset('/sbadmin2/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <link href="{{asset('/sbadmin2/css/sb-admin-2.min.css')}}" rel="stylesheet">
+  
 </head>
 
 <body id="page-top">
@@ -29,11 +28,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">QUIZ <sup>3</sup></div>
       </a>
 
       <!-- Divider -->
@@ -41,15 +40,15 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+      <a class="nav-link" href="/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>HOME</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <!-- Heading -->
+      {{-- <!-- Heading -->
       <div class="sidebar-heading">
         Interface
       </div>
@@ -92,49 +91,49 @@
       <!-- Heading -->
       <div class="sidebar-heading">
         Addons
-      </div>
+      </div> --}}
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      {{-- <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>List of Pages</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
+            {{-- <h6 class="collapse-header">Login Screens:</h6> --}}
+            {{-- <a class="collapse-item" href="/artikel">Artikel</a>
             <a class="collapse-item" href="register.html">Register</a>
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
+            <div class="collapse-divider"></div> --}}
+            {{-- <h6 class="collapse-header">Other Pages:</h6>
             <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-          </div>
+            <a class="collapse-item active" href="blank.html">Blank Page</a> --}}
+          {{-- </div>
         </div>
-      </li>
+      </li> --}}
 
-      <!-- Nav Item - Charts -->
+      {{-- <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
-      </li>
+      </li> --}}
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="/artikel">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Artikel</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
+      {{-- <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      </div> --}}
 
     </ul>
     <!-- End of Sidebar -->
@@ -332,10 +331,14 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+          <h1 class="h3 mb-4 text-gray-800">@yield('header')</h1>
 
         </div>
         <!-- /.container-fluid -->
+        <div class="container-fluid">
+          @yield('container')
+        </div>
+        
 
       </div>
       <!-- End of Main Content -->
@@ -381,19 +384,21 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+  <script src="{{asset('/sbadmin2/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{{asset('/sbadmin2/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="{{asset('/sbadmin2/js/sb-admin-2.min.js')}}"></script>
 
   <!-- script tambahan sweet alert, bukan dari bawaan sb-admin-2 -->
+  
+ 
+  <script src="{{asset('/sbadmin2/js/swal.min.js')}}"></script>
   @stack('scripts')
-
-  <script src="js/swal.min.js"></script>
 
 </body>
 

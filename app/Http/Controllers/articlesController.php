@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\article;
 use Illuminate\Http\Request;
 
-class articlesController extends Controller
+class ArticlesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +15,8 @@ class articlesController extends Controller
     public function index()
     {
         //
+        $articles = article::all();
+        return view('articles', ['articles' => $articles]);
     }
 
     /**
@@ -25,6 +27,7 @@ class articlesController extends Controller
     public function create()
     {
         //
+        return view('form');
     }
 
     /**
@@ -36,6 +39,16 @@ class articlesController extends Controller
     public function store(Request $request)
     {
         //
+                //
+        $article = new article;
+        $article->judul = $request->judul;
+        $article->isi = $request->isi;
+        $article->slug = $request->slug;
+        $article->tag = $request->tag;
+
+        $article->save();
+
+        return redirect('/artikel');
     }
 
     /**
