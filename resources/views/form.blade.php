@@ -10,13 +10,13 @@
     @csrf
     <div class="form-group" >
       <label for="title">Masukkan Judul Artikel</label>
-      <input type="text" class="form-control" id="title" name="judul">
+      <input type="text" class="form-control" id="title" name="judul" required>
       <label for="content">Masukkan Isi</label>
-      <input type="text" class="form-control" id="content" name="isi">
+      <input type="text" class="form-control" id="content" name="isi" required>
       <label for="slug">Masukkan Slug Artikel</label>
-      <input type="text" class="form-control" id="slug" name="slug">
+      <input type="text" class="form-control" id="slug" name="slug" required>
       <label for="tag">Masukkan Tag Artikel</label>
-      <input type="text" class="form-control" id="tag" name="tag">
+      <input type="text" class="form-control" id="tag" name="tag" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

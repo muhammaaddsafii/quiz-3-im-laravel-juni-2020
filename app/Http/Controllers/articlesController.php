@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\article;
 use Illuminate\Http\Request;
 
+
 class ArticlesController extends Controller
 {
     /**
@@ -59,7 +60,8 @@ class ArticlesController extends Controller
      */
     public function show(article $article)
     {
-        //
+        //return view('Students/show', ['student' => $student]);
+        return view('show-form', ['article' => $article]);
     }
 
     /**

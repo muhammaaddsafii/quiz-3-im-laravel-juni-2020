@@ -26,15 +26,7 @@
         <td>{{$article->slug}}</td>
         <td>{{$article->tag}}</td>
         <td>
-            <form action="" class="d-inline" method="">
-                <button type="submit" class="btn btn-primary">Detail</button>
-            </form>
-            <form action="" class="d-inline" method="">
-                <button type="submit" class="btn btn-success">Edit</button>
-            </form>
-            <form action="" class="d-inline" method="">
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
+          <a href="/artikel/{{$article->id}}" class="badge badge-primary">Detail</a>
         </td>
       </tr>
       @endforeach
