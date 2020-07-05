@@ -96,5 +96,7 @@ class ArticlesController extends Controller
     public function destroy(article $article)
     {
         //
+        article::destroy($article->id);
+        return redirect('/artikel')->with('status', 'Data berhasil dihapus !');
     }
 }

@@ -14,7 +14,13 @@
             <h6 class="card-subtitle mb-2 text-muted">{{$article->isi}}</h6>
             <p class="card-text">{{$article->slug}}</p>
             <p class="card-text">{{$article->tag}}</p>
-            <a href="" class="card-link">Kembali</a>
+              <button type="submit" class="btn btn-primary">Edit</button>
+              <form action="{{$article->id}}" class="d-inline" method="POST">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            <a href="/artikel" class="card-link">Kembali</a>
           </div>
         </div>
   </div>

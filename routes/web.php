@@ -21,7 +21,8 @@ Route::post('/artikel', 'ArticlesController@store');
 Route::get('/artikel/{article}', 'ArticlesController@show');
 // Route::get('/artikel/{id}/edit', 'ArticlesController@edit');
 // Route::put('/artikel{id}', 'ArticlesController@update');
-// Route::delete('/artikel{id}', 'ArticlesController@destroy');
+Route::delete('/artikel/{article}', 'ArticlesController@destroy');
+
 
 
 // Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
